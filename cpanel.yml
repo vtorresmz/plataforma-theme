@@ -1,6 +1,5 @@
----
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/vladralaboratori/public_html/tarea4/wp-content/themes/plataforma-theme/
-    - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -R * $DEPLOYPATH
+tasks:
+- export DEPLOYPATH=/home/vladralaboratori/public_html/tarea4/wp-content/themes/plataforma-theme/
+- /bin/mkdir -p $DEPLOYPATH
+- /usr/bin/rsync -av --delete --exclude='.git' ./ $DEPLOYPATH
